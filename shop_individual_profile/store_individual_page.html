@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+
+
+
+.vertical-menu {
+    width: 301px;
+    height: 390px;
+    overflow-y: auto;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+}
+
+.header {
+ 
+  background: black;
+  color: #f1f1f1;
+}
+
+
+
+
+
+.dropbtn {
+    background-color: skyblue; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+    margin: -10px 0px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: skyblue;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: skyblue;
+}
+
+/*home button*/
+
+.button {
+    background-color: skyblue; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button2 {
+    background-color:skyblue; 
+    color: white; 
+  
+}
+
+.button2:hover {
+    background-color:skyblue;
+    color: white;
+}
+/*add to cart button */
+
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 10px 20px;
+    font-size: 26px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+.success {color:green;}
+
+/*scroll to top button*/
+
+.scroll{
+  position: fixed;
+  background-color: green;
+  color: black;
+}
+/*seperate hover for  recomended section*/
+.panel {
+    border: 1px solid #59788e;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+}
+
+* {
+    box-sizing: border-box;
+}
+/*table design*/
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav-right {
+  margin-left: 800px;
+}
+/*side nav bar*/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+input[type=text],[type=tel],[type=time],[type=date],[type=number],[type=textarea] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+input[type=text]:focus,[type=tel]:focus,[type=date]:focus,[type=time]:focus,[type=number]:focus{
+    border: 3px solid #555;
+}
+select {
+    width: 23%;
+ margin: 32px 41px;
+    padding: 16px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.fa {
+    font-size: 25px;
+}
+
+.checked {
+    color: orange;
+}
+
+/* Three column layout */
+.side {
+    float: left;
+    width: 15%;
+    margin-top:10px;
+}
+
+.middle {
+    margin-top:10px;
+    float: left;
+    width: 70%;
+}
+
+/* Place text to the right */
+.right {
+    text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The bar container */
+.bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: #4CAF50;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+    .side, .middle {
+        width: 100%;
+    }
+    .right {
+        display: none;
+    }
+}
+/*style for comment an rating section*/
+.containe {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+
+
+
+
+.containe::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.containe img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.containe img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+</style>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+ <!--  google icon for resturant link-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->
+
+</head>
+<body>
+ 
+<div class="topnav" id="myTopnav">
+  <a href="#home"><img src="logo_main.png"></a>
+
+  <a href="#singup"style="float:right">singup</a>
+  <a href="#login"style="float:right">Login</a>
+    <a href="#" style="float:right">home</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+<div class="container-fluid">
+<div class="row">
+ <div class="col-6 col-sm-3" style="background-color:black;"> 
+
+ <img class="img-fluid" src="subway2.jfif" alt="Chania" style=" padding: 39px 0px 39px 0px; width: 300px; height:250px">
+ 
+ </div>
+<!--
+ <div class="d-none d-sm-block col-sm-6">
+ <div class="col-sm-6 col-xs-12">-->
+ 
+
+ <div class="col-6 col-sm-3" style="background-color:black;"><font face="Verdana" color="white" size="5">Subway</font> <br>
+<font face="Tempus Sans ITC" color="white" size="3">Old Rajinder Nagar Market, Karol Bagh
+Fast Food</font><br><br>
+<br><br><br><br>
+		<div class="row">
+  <div class="col-4 col-sm-4"><span class="label success fa fa-star" style="color:white;">4.5 </span></div>
+  <div class="col-4 col-sm-4" style="color:white;  border-left: 2px solid grey;
+    height: 50px;">$400-/</div>
+  <div class="col-4 col-sm-4" style="color:white;border-left: 2px solid grey;
+    height: 50px;">40 min</div>
+</div></div>
+
+<div class="d-none d-sm-block col-sm-2" style="background-color:black;">
+
+<img   class="img-fluid" src="subwayoffer2.jpg" alt="Chania" style=" padding: 39px 0px 39px 0px; width: 300px; height:250px"></div>
+<div class="d-none d-sm-block col-sm-2" style="background-color:black;">
+<img   class="img-fluid" src="subwayoffer1.png" alt="Chania" style=" padding: 39px 0px 39px 0px; width: 300px; height:250px"></div>
+<div class="d-none d-sm-block col-sm-2" style="background-color:black;">
+<img   class="img-fluid" src="subwayoffer3.jfif" alt="Chania" style=" padding: 39px 0px 39px 0px; width: 300px; height:250px"></div>
+ </div>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+
+  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+ 
+    <ul class="navbar-nav">
+      <li class="nav-item button button2">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+       <li class="dropdown button button2 dropdown">
+          <a class="dropdown-toggle dropbtn" data-toggle="dropdown" href="#">Menu<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-content">
+          <li>  <a href="#beverages">Beverages</a></li>
+   <li> <a href="#snacks">snacks</a></li>
+    <li><a href="#">Batti</a></li>
+	<li><a href="#">Chapati Aur Paratha</a></li>
+    <li><a href="#">Sath-Sath</a></li>
+   <li> <a href="#">Rice</a></li>
+   <li> <a href="#">Desert</a></li>
+		
+          </ul>
+        </li>
+      <li class="nav-item button button2">
+        <a class="nav-link" href="#table booking">Book table</a>
+		 
+      </li>    
+	  <li class="nav-item  button button2">
+	  
+	  <a class="nav-link">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h1>Sorry your cart is empty(*.*)</h1>
+  </div>
+  
+<span style="cursor:pointer" onclick="openNav()">
+<span class="fa fa-shopping-cart"style="font-size:35px;" >cart</span>
+</span>
+
+	  
+	  </a>
+	  </li>
+    </ul>
+  </div>  
+</nav>
+  <script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+</script>
+
+<script>
+$('.navbar-nav').find('a').on('click', function(menu){
+  $('.navbar-toggle').trigger('click');
+});
+</script>
+
+
+<div class="container-fluid">
+<div class="row" style="background-color:lightcyan;"><!--opening of home row-->
+    <div class="col 12 col-sm-12"><!--opening of home-->
+	<h1 id="home">home</h1><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	<br>
+	</div><!--closing of home-->
+ 
+ 
+  </div><!--closing of home row-->
+</div>
+
+<!--recomended  item for paticular shop-->
+<div class="container">    <br>
+   <!--seperate line for each setion-->
+    <h1 style=" border-bottom: 5px solid red";></h1>
+	<br>
+  <div  class="row"><h1 style=" border-bottom: 5px solid red";></h1>
+    <div class="col 12 col-sm-12"><font face="Trebuchet MS" color="black" size="10">Recomended</font>
+	 </div>
+	  </div>
+	   </div>
+	
+
+  
+
+	   <!--items under second row of recomemnded item list-->
+<div class="container">    
+  <div class="row">
+   
+	 <div class="col-4 col-sm-4">
+     <div class="panel panel-primary" style="border:none">
+        <div class="panel-body"><img src="bs1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+		<!--name of food-->
+	<img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+ <p style="margin: -32px 0px 8px 33px;"><font face="Trebuchet MS" color="black" size="5">Burger</font></p>
+  <font face="Tempus Sans ITC" style="margin:2% 0% 0% 12%;"color="grey" size="3">Quick bites
+
+</font>
+	<p  style="margin:2% 0% 0% 12%;">$400-/</p>
+<button class="btn success" style="margin: -15% 0% 0% 68%;">ADD</button>
+</div>
+</div>    
+   
+   
+   
+	 
+	 <div class="col-4 col-sm-4">
+     <div class="panel panel-primary" style="border:none">
+        <div class="panel-body"><img src="bs1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+		<!--name of food-->
+	<img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+ <p style="margin: -32px 0px 8px 33px;"><font face="Trebuchet MS" color="black" size="5">Burger</font></p>
+  <font face="Tempus Sans ITC" style="margin:2% 0% 0% 12%;"color="grey" size="3">Quick bites
+
+</font>
+	<p  style="margin:2% 0% 0% 12%;">$400-/</p>
+<button class="btn success" style="margin: -15% 0% 0% 68%;">ADD</button>
+</div>
+</div>    
+   
+   	 <div class="col-4 col-sm-4">
+     <div class="panel panel-primary" style="border:none">
+        <div class="panel-body"><img src="bs1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+		<!--name of food-->
+	<img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+ <p style="margin: -32px 0px 8px 33px;"><font face="Trebuchet MS" color="black" size="5">Burger</font></p>
+  <font face="Tempus Sans ITC" style="margin:2% 0% 0% 12%;"color="grey" size="3">Quick bites
+
+</font>
+	<p  style="margin:2% 0% 0% 12%;">$400-/</p>
+<button class="btn success" style="margin: -15% 0% 0% 68%;">ADD</button>
+</div>
+</div>    
+   
+   	 <div class="col-4 col-sm-4">
+     <div class="panel panel-primary" style="border:none">
+        <div class="panel-body"><img src="bs1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+		<!--name of food-->
+	<img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+ <p style="margin: -32px 0px 8px 33px;"><font face="Trebuchet MS" color="black" size="5">Burger</font></p>
+  <font face="Tempus Sans ITC" style="margin:2% 0% 0% 12%;"color="grey" size="3">Quick bites
+
+</font>
+	<p  style="margin:2% 0% 0% 12%;">$400-/</p>
+<button class="btn success" style="margin: -15% 0% 0% 68%;">ADD</button>
+</div>
+</div>    
+   
+   </div>
+   </div>
+    <!--items under second row of recomemnded item list-->
+
+   
+	
+	<br>
+   <!--seperate line for each setion-->
+    <h1 style=" border-bottom: 5px solid red";></h1>
+	<br>
+	
+	<div class="container">    
+  <div  id="beverages"class="row">
+    <div class="col-12 col-sm-8"><font face="Trebuchet MS" color="black" size="10">Beverages</font>
+	 </div>
+	  <div class=" d-none d-sm-block  col-sm-4"><font face="Trebuchet MS" color="black" size="10">Best in your area</font>
+	 </div>
+	  </div>
+	   </div>
+<div class="container-fluid">
+  <div class="row">
+<!-- menu-->
+  <div class="col-12 col-sm-8">
+    <!--without image goes here-->
+ <table id="customers">
+    <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr> <tr>
+    <td>
+   
+   
+     
+     <img src="vegg.png" class="img-responsive" height="30" width="30" alt="Image">
+	 <font face="Tempus Sans ITC" color="black" size="5">Classic Shake with Cheese Dream Popcorn (Large)
+</font><br><h6 style="margin: 22px 0px -10px 37px; color:grey;">$120-/</h6>
+     <button class="btn success" style="margin: -4% 0% 0% 74%;">ADD</button>     
+ 
+	</td>
+    </tr>
+	
+ </table>
+   </div>
+   
+   
+  
+  <div class="d-none d-sm-block col-sm-4" style="background-color:white">
+  
+
+         <div class="panel panel-danger">
+        <div class="panel-heading"><font face="MS Reference Sans Serif"size="6">Lucknow Sweets</font></div>
+        <div class="panel-body"><img src="bs3.jpg" class="img-responsive" style="width:69%" alt="Image"></div>
+        <div class="panel-footer"> <font face="Segoe Script" color="black" size="3">South Indian,Punjabi,Continental<br>,Chinese</font>
+			<br><div class="row">
+  <div class="col-sm-4"><span class="label success fa fa-star">4.5 </span></div>
+  <div class="col-sm-4">$400-/</div>
+  <div class="col-sm-4">40 min</div>
+</div>
+						<br><div class="btn-group">
+  <button class="button" style="color:white;"><i class="fa fa-phone" style="font-size:20px"></i>Call </button>
+  <button class="button"style="color:white;"> <i class="material-icons"  style="font-size:20px">restaurant_menu</i>Menu</button>
+  <button class="button"style="color:white;"><i class="fa fa-cart-arrow-down" style="font-size:20px"></i>Order</button>
+
+</div>
+			</div> 
+
+
+</div>  <div class="panel panel-danger">
+        <div class="panel-heading"><font face="MS Reference Sans Serif"size="6">Lucknow Sweets</font></div>
+        <div class="panel-body"><img src="bs3.jpg" class="img-responsive" style="width:69%" alt="Image"></div>
+        <div class="panel-footer"> <font face="Segoe Script" color="black" size="3">South Indian,Punjabi,Continental<br>,Chinese</font>
+			<br><div class="row">
+  <div class="col-sm-4"><span class="label success fa fa-star">4.5 </span></div>
+  <div class="col-sm-4">$400-/</div>
+  <div class="col-sm-4">40 min</div>
+</div>
+						<br><div class="btn-group">
+  <button class="button" style="color:white;"><i class="fa fa-phone" style="font-size:20px"></i>Call </button>
+  <button class="button"style="color:white;"> <i class="material-icons"  style="font-size:20px">restaurant_menu</i>Menu</button>
+  <button class="button"style="color:white;"><i class="fa fa-cart-arrow-down" style="font-size:20px"></i>Order</button>
+
+</div>
+			</div> 
+
+
+</div>  <div class="panel panel-danger">
+        <div class="panel-heading"><font face="MS Reference Sans Serif"size="6">Lucknow Sweets</font></div>
+        <div class="panel-body"><img src="bs3.jpg" class="img-responsive" style="width:69%" alt="Image"></div>
+        <div class="panel-footer"> <font face="Segoe Script" color="black" size="3">South Indian,Punjabi,Continental<br>,Chinese</font>
+			<br><div class="row">
+  <div class="col-sm-4"><span class="label success fa fa-star">4.5 </span></div>
+  <div class="col-sm-4">$400-/</div>
+  <div class="col-sm-4">40 min</div>
+</div>
+						<br><div class="btn-group">
+  <button class="button" style="color:white;"><i class="fa fa-phone" style="font-size:20px"></i>Call </button>
+  <button class="button"style="color:white;"> <i class="material-icons"  style="font-size:20px">restaurant_menu</i>Menu</button>
+  <button class="button"style="color:white;"><i class="fa fa-cart-arrow-down" style="font-size:20px"></i>Order</button>
+
+</div>
+			</div> 
+
+
+</div>  <div class="panel panel-danger">
+        <div class="panel-heading"><font face="MS Reference Sans Serif"size="6">Lucknow Sweets</font></div>
+        <div class="panel-body"><img src="bs3.jpg" class="img-responsive" style="width:69%" alt="Image"></div>
+        <div class="panel-footer"> <font face="Segoe Script" color="black" size="3">South Indian,Punjabi,Continental<br>,Chinese</font>
+			<br><div class="row">
+  <div class="col-sm-4"><span class="label success fa fa-star">4.5 </span></div>
+  <div class="col-sm-4">$400-/</div>
+  <div class="col-sm-4">40 min</div>
+</div>
+						<br><div class="btn-group">
+  <button class="button" style="color:white;"><i class="fa fa-phone" style="font-size:20px"></i>Call </button>
+  <button class="button"style="color:white;"> <i class="material-icons"  style="font-size:20px">restaurant_menu</i>Menu</button>
+  <button class="button"style="color:white;"><i class="fa fa-cart-arrow-down" style="font-size:20px"></i>Order</button>
+
+</div>
+			</div> 
+
+
+</div> 
+
+ 
+  </div>
+  </div>
+</div>
+	<div class="container"><br> 
+ 
+    <h1 style=" border-bottom: 5px solid red";></h1>
+	<br>
+  <div  class="row"><h1 style=" border-bottom: 5px solid red";></h1>
+    <div class="col 12 col-sm-12" id="table booking"><font face="Trebuchet MS" color="black" size="10">Welcome to table booking</font>
+	 </div>
+	  </div>
+	   </div>
+
+	<!--contain the booking section of resteraunt-->
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-12 col-sm-8">
+    <form action="Bookingrequest.php" method="post" autocomplete="on">
+	
+  
+  
+ <font face="Lucida Sans Unicode" color="black" size="4">First name:</font>
+    <input type="text" name="firstname" maxlength="20" value=""  placeholder="ashish"style=" margin: 22px 19px;" required><br>
+<font face="Lucida Sans Unicode" color="black" size="4">Last name:</font>
+    <input type="text" name="lastname" maxlength="20" value=""  placeholder="sharma" style=" margin: 22px 21px;" required><br>
+	<font face="Lucida Sans Unicode" color="black" size="4">Contact no.:</font>   
+  <input type="tel" maxlength="10" name="usrtel" placeholder="9003026270"style=" margin: 22px 11px;" required><br>
+ <font face="Lucida Sans Unicode" color="black" size="4"> Choose Date:</font>
+  
+   <select  id="events" name="date">
+ <option value="date">--select your date-</option>
+
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+<option value='7'>7</option>
+<option value='8'>8</option>
+<option value='9'>9</option>
+<option value='10'>10</option>
+<option value='11'>11</option>
+<option value='12'>12</option>
+<option value='13'>13</option>
+<option value='14'>14</option>
+<option value='15'>15</option>
+<option value='16'>16</option>
+<option value='17'>17</option>
+<option value='18'>18</option>
+<option value='19'>19</option>
+<option value='20'>20</option>
+<option value='21'>21</option>
+<option value='22'>22</option>
+<option value='23'>23</option>
+<option value='24'>24</option>
+<option value='25'>25</option>
+<option value='26'>26</option>
+<option value='27'>27</option>
+<option value='28'>28</option>
+<option value='29'>29</option>
+<option value='30'>30</option>
+<option value='31'>31</option>
+</select>
+  <select id="events" name="date">
+ <option value="month">--select month-</option>
+<option value='1'>jan</option>
+<option value='2'>feb</option>
+<option value='3'>mar</option>
+<option value='4'>apr</option>
+<option value='11'>may</option>
+<option value='5'>jun</option>
+<option value='6'>jul</option>
+<option value='7'>aug</option>
+<option value='8'>sep</option>
+<option value='9'>oct</option>
+<option value='10'>nov</option>
+
+<option value='12'>dec</option>
+  
+  </select>
+  <select id="year" name="year">
+ <option value="year">--select year</option>
+  <option value='2018'>2018</option>
+  </select>
+  <br><br>
+<font face="Lucida Sans Unicode" color="black" size="4">   Choose time:</font>
+
+ <select id="events" name="occasion">
+ <option value="usa" select>--select your arriving time--</option>
+    <option value="au">10am-11am</option>
+    <option value="ca">11am-12pm</option>
+    <option value="usa">12pm-1pm</option>
+	  <option value="usa">1pm-2pm</option>
+	  <option value="usa">3pm-4pm</option>
+	  <option value="usa">4pm-5pm</option> 
+	  <option value="usa">5pm-6pm</option>
+	 <option value="usa" select>Any other</option>
+  </select>
+
+  <br>
+	 <font face="Lucida Sans Unicode" color="black" size="4"> No. guest:</font>
+  <input type="number" name="quantity" min="1" max="10" style=" margin: 32px 30px;" placeholder="Maximum 10 guest-----" required ><br>
+  
+<font face="Lucida Sans Unicode" color="black" size="4">  Occasion:</font>
+ <select id="events" name="occasion">
+ <option value="usa">--select any option--</option>
+    <option value="au">Birthday party</option>
+    <option value="ca">Wedding Anniversary</option>
+    <option value="usa">Kity party</option>
+	 <option value="usa" select>Any other</option>
+  </select><br>
+<font face="Lucida Sans Unicode" color="black" size="4">Any special arrangement:</font>
+	<input type="radio" name="gender" value="Yes"  required> Yes
+  <input type="radio" name="gender" value="No" checked>No<br>
+<p><font face="Lucida Sans Unicode" color="black" size="4">Any special request:</font><textarea name="message" rows="5" cols="19"maxlength="500" placeholder="any special arrangement which you want from us"></textarea><br><br>
+   
+  <input type="reset">   <input type="submit" value="Submit">
+
+
+	
+	 </form>
+   
+   
+</div>
+
+ <div class="d-none d-sm-block col-sm-4" style="overflow:scroll; height:800px;">
+ 
+
+ 
+<span class="heading">User Rating</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p>4.1 average based on 254 reviews.</p>
+<hr style="border:3px solid #f1f1f1">
+
+<div class="row">
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>150</div>
+  </div>
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>63</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>15</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>6</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+</div>
+<div class="containe">
+  <img src="women.jpg" alt="Avatar" style="width:100%;">
+  <p>good food quality</p>
+  <span class="time-right">11:00</span>
+</div>
+
+
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div><div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+<div class="containe">
+  <img src="download.jfif" alt="Avatar" style="width:100%;">
+  <p>nice food with nice taste</p>
+  <span class="time-right">11:02</span>
+</div>
+
+
+
+ 
+ </div>
+
+ 
+ </div>
+</div>
+
+</body>
+</html>
+
+
